@@ -22,16 +22,27 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            Search s = new WindowsFormsApplication1.Search();
-            s.Show();
+            Account ac = new Account(textBox1.Text, textBox2.Text);
+            await ac.testing(textBox1.Text, textBox2.Text);
+            System.Diagnostics.Debug.WriteLine("Login");
+            if (ac.dataExists)
+            {
+                Search s = new WindowsFormsApplication1.Search();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Signup signup = new Signup();
             signup.Show();
+            this.Hide();
         }
     }
 }

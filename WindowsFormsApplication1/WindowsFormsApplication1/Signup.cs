@@ -27,10 +27,22 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            Database db = new Database();
+
+            bool result = await db.ifExists(textBox1.Text);
+            if (!result)
+            {
+                await db.addUser(textBox1.Text, textBox2.Text);
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Username already exists");
+            }
         }
     }
 }
