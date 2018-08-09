@@ -13,39 +13,26 @@ namespace WindowsFormsApplication1
         public bool dataExists;
 
         public Account() { }
-        public Account(string username, string password)
-        {
-            /*Database db = new Database();
 
-            bool result = await db.ifExists(username);
-
-            System.Diagnostics.Debug.WriteLine(db.checkVal);
-            if (db.checkVal)
-            {
-                this.username = username;
-                this.password = password;
-                dataExists = true;
-                System.Diagnostics.Debug.WriteLine(dataExists);
-            }
-            else
-            {
-                dataExists = false;
-            }*/
-        }
-
-        public async Task testing(string username, string password)
+        public async Task loginUser(string username, string password)
         {
             Database db = new Database();
 
             bool result = await db.ifExists(username);
 
-            System.Diagnostics.Debug.WriteLine(db.checkVal);
             if (result)
             {
-                this.username = username;
-                this.password = password;
-                dataExists = true;
-                System.Diagnostics.Debug.WriteLine(dataExists);
+                if (db.password == password)
+                {
+                    this.username = username;
+                    this.password = password;
+                    dataExists = true;
+                }
+                else
+                {
+                    dataExists = false;
+                }
+                
             }
             else
             {

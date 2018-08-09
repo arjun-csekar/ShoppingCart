@@ -13,7 +13,9 @@ namespace WindowsFormsApplication1
     class Database
     {
 
-        public bool checkVal;
+        //public bool checkVal;
+        public string username;
+        public string password;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -33,15 +35,13 @@ namespace WindowsFormsApplication1
             try
             {
                 FirebaseResponse response = await client.GetTaskAsync("Information/" + name);
-                response.ResultAs<Data>();
-                checkVal = true;
-                System.Diagnostics.Debug.WriteLine("Inside");
+                Data obj = response.ResultAs<Data>();
+                username = obj.Username;
+                password = obj.Password;
                 return true;
             }
             catch
             {
-                checkVal = false;
-                System.Diagnostics.Debug.WriteLine("outside");
                 return false;
             }
         }
@@ -56,6 +56,11 @@ namespace WindowsFormsApplication1
 
             SetResponse response = await client.SetTaskAsync("Information/" + username, data);
             Data result = response.ResultAs<Data>();
+        }
+
+        public async Task getAttributes()
+        {
+
         }
     }
 }

@@ -24,9 +24,8 @@ namespace WindowsFormsApplication1
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            Account ac = new Account(textBox1.Text, textBox2.Text);
-            await ac.testing(textBox1.Text, textBox2.Text);
-            System.Diagnostics.Debug.WriteLine("Login");
+            Account ac = new Account();
+            await ac.loginUser(textBox1.Text, textBox2.Text);
             if (ac.dataExists)
             {
                 Search s = new WindowsFormsApplication1.Search();
