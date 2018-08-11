@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="SearchList.cs" />
+    <Compile Include="SearchItem.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Signup.cs">

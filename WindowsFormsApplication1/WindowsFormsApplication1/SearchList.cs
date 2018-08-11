@@ -15,12 +15,19 @@ namespace WindowsFormsApplication1
             searchList = new List<SearchItem>();
         }
 
+        public SearchItem this[int index]=>searchList[index];
+
         public void addItem(String name, String price, String description, String image)=>
             searchList.Add(new SearchItem(name, description, price, image));
 
         public List<SearchItem> returnList()
         {
             return searchList;
+        }
+
+        public int getCount()
+        {
+            return searchList.Count();
         }
 
         public void clear()

@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
     public class ShoppingCart
     {
 
-        List<Item> cart;
+        public List<Item> cart;
 
         public ShoppingCart()
         {

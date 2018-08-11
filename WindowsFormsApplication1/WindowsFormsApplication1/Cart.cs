@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
             if (cart.returnCart().Count == 0)
             {
                 Label empty = new Label();
-                empty.Location = new Point(59, 30 * i + 10);
+                empty.Location = new Point(59, 30 + 10);
                 empty.Text = "Shopping cart is empty";
             }
             else
