@@ -58,9 +58,9 @@ namespace WindowsFormsApplication1
             Data result = response.ResultAs<Data>();
         }
 
-        public async Task getAttributes()
-        {
+        //public async Task getAttributes()
+        //{
 
-        }
+        //}
     }
 }
