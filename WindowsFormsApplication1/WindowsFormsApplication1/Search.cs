@@ -12,11 +12,16 @@ namespace WindowsFormsApplication1
 {
     public partial class Search : Form
     {
+
+        ShoppingCart cart;
+        SearchList searchContent;
+
         public Search()
         {
           
             InitializeComponent();
-
+            cart = new ShoppingCart();
+            searchContent = new WindowsFormsApplication1.SearchList();
             populate_picturebox();
         }
 
@@ -47,12 +52,14 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Cart cart = new Cart();
+            Cart cart = new Cart(this.cart);
             cart.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+
             pictureBox1.Load("https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             label1.Text += ": Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver";

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class ShoppingCart
+    public class ShoppingCart
     {
 
         List<Item> cart;
@@ -25,6 +25,10 @@ namespace WindowsFormsApplication1
         {
             cart.RemoveAt(at);
         }
-
+        
+        public List<Item> returnCart()
+        {
+            return cart;
+        }    
     }
 }
