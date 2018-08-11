@@ -212,7 +212,7 @@ namespace WindowsFormsApplication1
                 }
                 catch(ArgumentOutOfRangeException aoor)
                 {
-
+                    populateTableRow("", "", "", "", j);
                 }
             }
 
@@ -252,11 +252,11 @@ namespace WindowsFormsApplication1
             {
                 try
                 {
-                    populateTableRow2(searchContent[i].ItemName, searchContent[i].ItemPrice.ToString("c1"), searchContent[i].ItemDesc, searchContent[i].ImageLocation, j);
+                    populateTableRow2(searchContent[i].ItemName, searchContent[i].ItemPrice.ToString("c"), searchContent[i].ItemDesc, searchContent[i].ImageLocation, j);
                 }
                 catch (ArgumentOutOfRangeException aoor)
                 {
-
+                    populateTableRow2("", "", "", "", j);
                 }
             }
 
@@ -264,7 +264,7 @@ namespace WindowsFormsApplication1
             // button5
             // 
             
-                this.button6 = (System.Windows.Forms.Button)this.Controls["button6"];
+                this.button5 = (System.Windows.Forms.Button)this.Controls["button5"];
                 this.button5.Name = "button5";
                 this.button5.Size = new System.Drawing.Size(122, 29);
                 this.button5.TabIndex = 4;
@@ -296,7 +296,26 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if(button1.Name == "button11")
+            {
+                cart.addItem(searchContent[5 * (pageNumber - 1)+0].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 0].ItemPrice);
+            }
+            else if (button1.Name == "button12")
+            {
+                cart.addItem(searchContent[5 * (pageNumber - 1)+1].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 1].ItemPrice);
+            }
+            else if (button1.Name == "button13")
+            {
+                cart.addItem(searchContent[5 * (pageNumber - 1) + 2].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 2].ItemPrice);
+            }
+            else if (button1.Name == "button14")
+            {
+                cart.addItem(searchContent[5 * (pageNumber - 1) + 3].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 3].ItemPrice);
+            }
+            else if (button1.Name == "button15")
+            {
+                cart.addItem(searchContent[5 * (pageNumber - 1) + 4].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 4].ItemPrice);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
