@@ -14,7 +14,9 @@ namespace WindowsFormsApplication1
     {
         public Search()
         {
+          
             InitializeComponent();
+
             populate_picturebox();
         }
 
@@ -40,8 +42,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Checkout CO = new Checkout();
-            CO.Show();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -58,5 +59,7 @@ namespace WindowsFormsApplication1
             label2.Text += ": $84.59";
             label3.Text += ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.";
         }
+
+        
     }
 }
