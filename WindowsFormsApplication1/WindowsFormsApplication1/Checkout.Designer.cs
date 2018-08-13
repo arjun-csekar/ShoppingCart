@@ -71,6 +71,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(141, 26);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -301,6 +302,7 @@
             this.label17.Size = new System.Drawing.Size(49, 20);
             this.label17.TabIndex = 33;
             this.label17.Text = "$0.00";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -319,6 +321,7 @@
             this.label19.Size = new System.Drawing.Size(49, 20);
             this.label19.TabIndex = 31;
             this.label19.Text = "$0.00";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -337,6 +340,7 @@
             this.label21.Size = new System.Drawing.Size(49, 20);
             this.label21.TabIndex = 29;
             this.label21.Text = "$0.00";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -346,6 +350,7 @@
             this.label22.Size = new System.Drawing.Size(48, 20);
             this.label22.TabIndex = 28;
             this.label22.Text = "Price:";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // button1
             // 
@@ -361,6 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(651, 951);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label17);

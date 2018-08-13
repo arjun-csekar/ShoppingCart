@@ -59,18 +59,20 @@
             this.LogoutButton.TabIndex = 7;
             this.LogoutButton.Text = "Logout";
             this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1066, 586);
+            this.ClientSize = new System.Drawing.Size(1270, 600);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchBox);
             this.Name = "Search";
             this.Text = "Search";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Search_FormClosed);
             this.Load += new System.EventHandler(this.Search_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

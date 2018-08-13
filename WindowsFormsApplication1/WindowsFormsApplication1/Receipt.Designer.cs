@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -114,24 +113,15 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Name:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(127, 225);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Name";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 289);
+            this.button1.Location = new System.Drawing.Point(42, 285);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 32);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Search";
+            this.button1.Size = new System.Drawing.Size(87, 29);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Receipt
             // 
@@ -139,7 +129,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 384);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -150,6 +139,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Receipt";
             this.Text = "Reciept";
+            this.Load += new System.EventHandler(this.Receipt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +155,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
     }
 }

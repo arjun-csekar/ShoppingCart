@@ -19,11 +19,18 @@ namespace WindowsFormsApplication1
         public void addItem(String name, int number, decimal price)
         {
             Item newItem = new Item(name, number, price);
+            cart.Add(newItem);
         }
 
         public void removeItem(int at)
         {
-            cart.RemoveAt(at);
+            try {
+                cart.RemoveAt(at);
+            }
+            catch (Exception e)
+            {
+
+            }
         }
         
         public List<Item> returnCart()

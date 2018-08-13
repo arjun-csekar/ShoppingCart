@@ -28,8 +28,9 @@ namespace WindowsFormsApplication1
             await ac.loginUser(textBox1.Text, textBox2.Text);
             if (ac.dataExists)
             {
-                Search s = new WindowsFormsApplication1.Search();
+                Search s = new WindowsFormsApplication1.Search(this);
                 s.Show();
+                
             }
             else
             {
@@ -43,5 +44,6 @@ namespace WindowsFormsApplication1
             signup.Show();
             this.Hide();
         }
+
     }
 }

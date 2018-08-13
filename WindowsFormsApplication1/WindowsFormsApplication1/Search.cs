@@ -26,13 +26,15 @@ namespace WindowsFormsApplication1
         System.Windows.Forms.Label label2;
         System.Windows.Forms.Label label1;
         System.Windows.Forms.PictureBox pictureBox1;
+        private Login loginPage;
 
 
-
-        public Search()
+        public Search(Login li)
         {
           
             InitializeComponent();
+            loginPage = li;
+            li.Hide();
             cart = new ShoppingCart();
             searchContent = new WindowsFormsApplication1.SearchList();
             pageNumber = 1;
@@ -92,7 +94,7 @@ namespace WindowsFormsApplication1
             // button1
             // 
             button1.Location = new System.Drawing.Point(332, 352 + (245 * (rowNum - 1)));
-            button1.Name = "button1"+rowNum;
+            button1.Name = rowNum.ToString();
             button1.Size = new System.Drawing.Size(122, 29);
             button1.TabIndex = 4;
             button1.Text = "Add to Cart";
@@ -171,13 +173,14 @@ namespace WindowsFormsApplication1
             // button1
             // 
 
-            System.Windows.Forms.Button button1 = (System.Windows.Forms.Button)this.Controls["button1" + rowNum];
-            button1.Name = "button1" + rowNum;
+            System.Windows.Forms.Button button1 = (System.Windows.Forms.Button)this.Controls[rowNum.ToString()];
+            button1.Name = rowNum.ToString();
             button1.Size = new System.Drawing.Size(122, 29);
             button1.TabIndex = 4;
             button1.Text = "Add to Cart";
             button1.UseVisualStyleBackColor = true;
             button1.Click += new System.EventHandler(button1_Click);
+            
             // 
             // button4
             // 
@@ -198,7 +201,14 @@ namespace WindowsFormsApplication1
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Load(image);
+            try
+            {
+                pictureBox1.Load(image);
+            }
+            catch(Exception e)
+            {
+
+            }
 
         }
 
@@ -296,26 +306,9 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(button1.Name == "button11")
-            {
-                cart.addItem(searchContent[5 * (pageNumber - 1)+0].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 0].ItemPrice);
-            }
-            else if (button1.Name == "button12")
-            {
-                cart.addItem(searchContent[5 * (pageNumber - 1)+1].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 1].ItemPrice);
-            }
-            else if (button1.Name == "button13")
-            {
-                cart.addItem(searchContent[5 * (pageNumber - 1) + 2].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 2].ItemPrice);
-            }
-            else if (button1.Name == "button14")
-            {
-                cart.addItem(searchContent[5 * (pageNumber - 1) + 3].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 3].ItemPrice);
-            }
-            else if (button1.Name == "button15")
-            {
-                cart.addItem(searchContent[5 * (pageNumber - 1) + 4].ItemName, 1 * pageNumber, searchContent[5 * (pageNumber - 1) + 4].ItemPrice);
-            }
+            System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+            
+            this.cart.addItem(searchContent[Convert.ToInt16(btn.Name)-1].ItemName, Convert.ToInt16(btn.Name) + ((pageNumber-1)*5), searchContent[Convert.ToInt16(btn.Name) - 1].ItemPrice);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -360,6 +353,15 @@ namespace WindowsFormsApplication1
             //label3.Text += ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.";
         }
 
-        
+        private void Search_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            loginPage.Show();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            loginPage.Show();
+            this.Close();
+        }
     }
 }
