@@ -179,7 +179,7 @@ namespace WindowsFormsApplication1
             button1.TabIndex = 4;
             button1.Text = "Add to Cart";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += new System.EventHandler(button1_Click);
+            
             
             // 
             // button4
@@ -191,7 +191,7 @@ namespace WindowsFormsApplication1
             button4.TabIndex = 8;
             button4.Text = "Cart";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += new System.EventHandler(button4_Click);
+            
             // 
             // pictureBox1
             //
@@ -218,7 +218,7 @@ namespace WindowsFormsApplication1
             {
                 try
                 {
-                    populateTableRow(searchContent[i].ItemName, searchContent[i].ItemPrice.ToString("c1"), searchContent[i].ItemDesc, searchContent[i].ImageLocation,j);
+                    populateTableRow(searchContent[i].ItemName, searchContent[i].ItemPrice.ToString("c"), searchContent[i].ItemDesc, searchContent[i].ImageLocation,j);
                 }
                 catch(ArgumentOutOfRangeException aoor)
                 {
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication1
         {
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
             
-            this.cart.addItem(searchContent[Convert.ToInt16(btn.Name)-1].ItemName, Convert.ToInt16(btn.Name) + ((pageNumber-1)*5), searchContent[Convert.ToInt16(btn.Name) - 1].ItemPrice);
+            this.cart.addItem(searchContent[Convert.ToInt16(btn.Name)-1 + ((pageNumber - 1) * 5)].ItemName, Convert.ToInt16(btn.Name) + ((pageNumber-1)*5), searchContent[Convert.ToInt16(btn.Name)-1 + ((pageNumber - 1) * 5)].ItemPrice);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -338,7 +338,7 @@ namespace WindowsFormsApplication1
             searchContent.addItem("6: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
             searchContent.addItem("7: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
             searchContent.addItem("8: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
-            searchContent.addItem("9: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
+            searchContent.addItem("9: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "90.00", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
             int count = searchContent.getCount();
             totalPages = (int)Math.Ceiling(Convert.ToDecimal(count) / 5.0m);
 

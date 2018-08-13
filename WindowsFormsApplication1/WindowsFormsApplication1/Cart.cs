@@ -114,7 +114,7 @@ namespace WindowsFormsApplication1
                 i++;
 
                 System.Windows.Forms.Button rec = new System.Windows.Forms.Button();
-                rec.Text = "Receipt";
+                rec.Text = "Checkout";
                 rec.Location = new Point(59, 30 * i + 10);
                 rec.Size = new System.Drawing.Size(86, 29);
                 rec.UseVisualStyleBackColor = true;
