@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public decimal ItemPrice
+        public Decimal ItemPrice
         {
             get
             {
