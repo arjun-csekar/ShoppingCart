@@ -60,3 +60,6 @@ C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\Window
 C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.dll
 C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml

@@ -27,6 +27,7 @@ namespace WindowsFormsApplication1
         System.Windows.Forms.Label label1;
         System.Windows.Forms.PictureBox pictureBox1;
         private Login loginPage;
+        private Boolean flag;
 
 
         public Search(Login li)
@@ -44,6 +45,7 @@ namespace WindowsFormsApplication1
             this.Controls.Add(label2);
             this.Controls.Add(label1);
             this.Controls.Add(pictureBox1);
+            flag = false;
 
         }
 
@@ -195,7 +197,7 @@ namespace WindowsFormsApplication1
             // 
             // pictureBox1
             //
-            PictureBox picturebox1 = (PictureBox)this.Controls["pictureBox1" + rowNum];
+            PictureBox pictureBox1 = (PictureBox)this.Controls["pictureBox1" + rowNum];
             pictureBox1.Name = "pictureBox1" + rowNum;
             pictureBox1.Size = new System.Drawing.Size(230, 234);
             pictureBox1.TabIndex = 0;
@@ -329,11 +331,20 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            pageNumber = 1;
+            searchContent.clear();
+
             HtmlParse html = new HtmlParse(SearchBox.Text);
 
+
+            int i = 0;
             foreach (SearchItem item in html.GetList())
             {
+                i++;
+                
                 searchContent.addItem(item.ItemName, item.ItemPrice.ToString(), "", item.ImageLocation);
+
+                if (i == 50) break;
             }
             //searchContent.addItem("1: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
             //searchContent.addItem("2: Dell Latitude D630 14.1-Inch Notebook PC (OS may vary) - Silver", "84.59", ": The Dell Latitude D630 Notebook PC comes with an Intel Core 2 Duo\nT7250 2GHz processor, 2GB DDR2 of memory, a 80GB hard drive, combo optical drive, wifi, and\nWindows XP Professional Operating System.", "https://images-na.ssl-images-amazon.com/images/I/41x0As6IqmL._AC_US218_.jpg");
@@ -347,7 +358,15 @@ namespace WindowsFormsApplication1
             int count = searchContent.getCount();
             totalPages = (int)Math.Ceiling(Convert.ToDecimal(count) / 5.0m);
 
-            populateTable();
+            if (flag == false)
+            {
+                populateTable();
+                flag = true;
+            }
+            else
+            {
+                populateTable2();
+            }
             
             
 
