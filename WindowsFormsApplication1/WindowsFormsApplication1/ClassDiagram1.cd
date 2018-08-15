@@ -22,9 +22,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApplication1.HtmlParse">
-    <Position X="0.5" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAEAIAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAAAAIQAAAEAIAAAAAAAAAAAAACAAAAAAAAI=</HashCode>
       <FileName>HtmlParse.cs</FileName>
     </TypeIdentifier>
   </Class>

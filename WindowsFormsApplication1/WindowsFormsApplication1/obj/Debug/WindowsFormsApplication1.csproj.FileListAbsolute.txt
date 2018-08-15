@@ -57,3 +57,6 @@ C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\Window
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CopyComplete
+C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\June\Desktop\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml
