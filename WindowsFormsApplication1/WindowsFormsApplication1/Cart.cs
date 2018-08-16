@@ -24,7 +24,9 @@ namespace WindowsFormsApplication1
             {
                 Label empty = new Label();
                 empty.Location = new Point(59, 30 + 10);
+                empty.AutoSize = true;
                 empty.Text = "Shopping cart is empty";
+                this.Controls.Add(empty);
             }
             else
             {
@@ -38,16 +40,19 @@ namespace WindowsFormsApplication1
                     number.Name = "number" + i.ToString();
                     number.Location = new Point(59, 30 * i + 10);
                     number.Text = i.ToString();
+                    //number.AutoSize = true;
 
                     Label itemName = new Label();
                     itemName.Name = "itemName" + i.ToString();
                     itemName.Location = new Point(103, 30 * i + 10);
                     itemName.Text = item.ItemName;
+                    //itemName.AutoSize = true;
 
                     Label itemPrice = new Label();
                     itemPrice.Name = "itemPrice" + i.ToString();
                     itemPrice.Location = new Point(368, 30 * i + 10);
                     itemPrice.Text = item.ItemPrice.ToString("c");
+                    //itemPrice.AutoSize = true;
 
                     button = new Button();
                     button.Name = i.ToString();
@@ -132,9 +137,12 @@ namespace WindowsFormsApplication1
         {
             if (cart.returnCart().Count == 0)
             {
+                this.Controls.Clear();
                 Label empty = new Label();
                 empty.Location = new Point(59, 30 + 10);
+                empty.AutoSize = true;
                 empty.Text = "Shopping cart is empty";
+                this.Controls.Add(empty);
             }
             else
             {
@@ -149,16 +157,19 @@ namespace WindowsFormsApplication1
                     number.Name = "number" + i.ToString();
                     number.Location = new Point(59, 30 * i + 10);
                     number.Text = i.ToString();
+                    //number.AutoSize = true;
 
                     Label itemName = new Label();
                     itemName.Name = "itemName" + i.ToString();
                     itemName.Location = new Point(103, 30 * i + 10);
                     itemName.Text = item.ItemName;
+                    //itemName.AutoSize = true;
 
                     Label itemPrice = new Label();
                     itemPrice.Name = "itemPrice" + i.ToString();
                     itemPrice.Location = new Point(368, 30 * i + 10);
                     itemPrice.Text = item.ItemPrice.ToString("c");
+                    //itemPrice.AutoSize = true;
 
                     button = new Button();
                     button.Name = i.ToString();
