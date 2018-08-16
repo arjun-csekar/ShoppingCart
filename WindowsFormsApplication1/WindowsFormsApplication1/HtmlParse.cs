@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
 
             foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@class='s-item__link']"))
             {
-                if (count == 5)
+                if (count == 8)
                 {
                     return;
                 }

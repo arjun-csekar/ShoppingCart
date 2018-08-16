@@ -174,14 +174,15 @@ namespace WindowsFormsApplication1
             // 
             // button1
             // 
-
-            System.Windows.Forms.Button button1 = (System.Windows.Forms.Button)this.Controls[rowNum.ToString()];
-            button1.Name = rowNum.ToString();
-            button1.Size = new System.Drawing.Size(122, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Add to Cart";
-            button1.UseVisualStyleBackColor = true;
-            
+            if (name != "None")
+            {
+                System.Windows.Forms.Button button1 = (System.Windows.Forms.Button)this.Controls[rowNum.ToString()];
+                button1.Name = rowNum.ToString();
+                button1.Size = new System.Drawing.Size(122, 29);
+                button1.TabIndex = 4;
+                button1.Text = "Add to Cart";
+                button1.UseVisualStyleBackColor = true;
+            }
             
             // 
             // button4
@@ -309,8 +310,14 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
-            
-            this.cart.addItem(searchContent[Convert.ToInt16(btn.Name)-1 + ((pageNumber - 1) * 5)].ItemName, Convert.ToInt16(btn.Name) + ((pageNumber-1)*5), searchContent[Convert.ToInt16(btn.Name)-1 + ((pageNumber - 1) * 5)].ItemPrice);
+            try
+            {
+                this.cart.addItem(searchContent[Convert.ToInt16(btn.Name) - 1 + ((pageNumber - 1) * 5)].ItemName, Convert.ToInt16(btn.Name) + ((pageNumber - 1) * 5), searchContent[Convert.ToInt16(btn.Name) - 1 + ((pageNumber - 1) * 5)].ItemPrice);
+            }
+            catch(Exception except)
+            {
+
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
