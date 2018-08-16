@@ -36,6 +36,12 @@ namespace WindowsFormsApplication1
         public List<Item> returnCart()
         {
             return cart;
-        }    
+        }
+        
+        public Item this[int index]
+        {
+            get { return cart[index]; }
+            set { cart[index] = value; }
+        }
     }
 }

@@ -252,10 +252,13 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Button btn = (Button)sender;
+            Database db = new Database();
+            await db.removeItemCart(Login.username, cart[Convert.ToInt16(btn.Name) - 1].ItemName);
             cart.removeItem(Convert.ToInt16(btn.Name)-1);
+            
             repopulateCart();
         }
     }

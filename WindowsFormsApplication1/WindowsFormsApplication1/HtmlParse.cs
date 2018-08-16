@@ -41,7 +41,6 @@ namespace WindowsFormsApplication1
 
         private void searchIterate(HtmlAgilityPack.HtmlDocument doc, SearchItem item)
         {
-            //string display = "";
             int count = 0;
             string name;
             string price;
@@ -49,13 +48,12 @@ namespace WindowsFormsApplication1
 
             foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@class='s-item__link']"))
             {
-                if (count == 8)
+                if (count == 10)
                 {
                     return;
                 }
                 else
                 {
-                    //display = link.Attributes["href"].Value;
                     doc = getHtmlDoc(link);
 
                     HtmlNode Name = doc.DocumentNode.SelectSingleNode("//div[@class='sw']//a");

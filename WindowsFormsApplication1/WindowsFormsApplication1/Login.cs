@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Login : Form
     {
+        public static string username;
         public Login()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace WindowsFormsApplication1
             await ac.loginUser(textBox1.Text, textBox2.Text);
             if (ac.dataExists)
             {
+                username = textBox1.Text;
                 Search s = new WindowsFormsApplication1.Search(this);
                 s.Show();
                 
