@@ -26,10 +26,10 @@ namespace WindowsFormsApplication1
         private async void button1_Click(object sender, EventArgs e)
         {
             Account ac = new Account();
-            await ac.loginUser(textBox1.Text, textBox2.Text);
+            await ac.loginUser(usrNameTxtBox.Text, passTxtBox.Text);
             if (ac.dataExists)
             {
-                username = textBox1.Text;
+                username = usrNameTxtBox.Text;
                 Search s = new WindowsFormsApplication1.Search(this);
                 s.Show();
                 

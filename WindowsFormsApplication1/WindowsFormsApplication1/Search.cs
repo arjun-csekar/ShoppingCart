@@ -18,14 +18,14 @@ namespace WindowsFormsApplication1
         SearchList searchContent;
         int pageNumber;
         int totalPages;
-        System.Windows.Forms.Button button5;
-        System.Windows.Forms.Button button6;
-        System.Windows.Forms.Button button4;
-        System.Windows.Forms.Button button1;
-        System.Windows.Forms.Label label3;
-        System.Windows.Forms.Label label2;
-        System.Windows.Forms.Label label1;
-        System.Windows.Forms.PictureBox pictureBox1;
+        System.Windows.Forms.Button prevBtn;
+        System.Windows.Forms.Button nextBtn;
+        System.Windows.Forms.Button cartPageBtn;
+        System.Windows.Forms.Button addToCartBtn;
+        System.Windows.Forms.Label descriptionLbl;
+        System.Windows.Forms.Label priceLbl;
+        System.Windows.Forms.Label nameLbl;
+        System.Windows.Forms.PictureBox itemPicBox;
         private Login loginPage;
         private Boolean flag;
 
@@ -39,12 +39,12 @@ namespace WindowsFormsApplication1
             cart = new ShoppingCart();
             searchContent = new WindowsFormsApplication1.SearchList();
             pageNumber = 1;
-            this.Controls.Add(button4);
-            this.Controls.Add(button1);
-            this.Controls.Add(label3);
-            this.Controls.Add(label2);
-            this.Controls.Add(label1);
-            this.Controls.Add(pictureBox1);
+            this.Controls.Add(cartPageBtn);
+            this.Controls.Add(addToCartBtn);
+            this.Controls.Add(descriptionLbl);
+            this.Controls.Add(priceLbl);
+            this.Controls.Add(nameLbl);
+            this.Controls.Add(itemPicBox);
             flag = false;
             Database db = new Database();
             db.getCart(Login.username, cart.returnCart());
@@ -54,82 +54,82 @@ namespace WindowsFormsApplication1
         {
 
 
-            button4 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
-            label3 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
+            cartPageBtn = new System.Windows.Forms.Button();
+            addToCartBtn = new System.Windows.Forms.Button();
+            descriptionLbl = new System.Windows.Forms.Label();
+            priceLbl = new System.Windows.Forms.Label();
+            nameLbl = new System.Windows.Forms.Label();
+            itemPicBox = new System.Windows.Forms.PictureBox();
 
             // 
-            // label1
+            // nameLbl
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(328, 155 + (245 * (rowNum - 1)));
-            label1.Name = "label1"+rowNum;
+            nameLbl.AutoSize = true;
+            nameLbl.Location = new System.Drawing.Point(328, 155 + (245 * (rowNum - 1)));
+            nameLbl.Name = "nameLbl"+rowNum;
            
-            label1.Size = new System.Drawing.Size(87, 20);
-            label1.TabIndex = 1;
-            label1.Text = name;
+            nameLbl.Size = new System.Drawing.Size(87, 20);
+            nameLbl.TabIndex = 1;
+            nameLbl.Text = name;
             
 
             
            
             // 
-            // label2
+            // priceLbl
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(328, 192 + (245 * (rowNum - 1)));
-            label2.Name = "label2" + rowNum;
-            label2.Size = new System.Drawing.Size(80, 20);
-            label2.TabIndex = 2;
-            label2.Text = price;
+            priceLbl.AutoSize = true;
+            priceLbl.Location = new System.Drawing.Point(328, 192 + (245 * (rowNum - 1)));
+            priceLbl.Name = "priceLbl" + rowNum;
+            priceLbl.Size = new System.Drawing.Size(80, 20);
+            priceLbl.TabIndex = 2;
+            priceLbl.Text = price;
             // 
-            // label3
+            // descriptionLbl
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(328, 232 + (245 * (rowNum - 1)));
-            label3.Name = "label3" + rowNum;
-            label3.Size = new System.Drawing.Size(125, 20);
-            label3.TabIndex = 3;
-            label3.Text = desc;
+            descriptionLbl.AutoSize = true;
+            descriptionLbl.Location = new System.Drawing.Point(328, 232 + (245 * (rowNum - 1)));
+            descriptionLbl.Name = "descriptionLbl" + rowNum;
+            descriptionLbl.Size = new System.Drawing.Size(125, 20);
+            descriptionLbl.TabIndex = 3;
+            descriptionLbl.Text = desc;
             // 
-            // button1
+            // addToCartBtn
             // 
-            button1.Location = new System.Drawing.Point(332, 352 + (245 * (rowNum - 1)));
-            button1.Name = rowNum.ToString();
-            button1.Size = new System.Drawing.Size(122, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Add to Cart";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += new System.EventHandler(button1_Click);
+            addToCartBtn.Location = new System.Drawing.Point(332, 352 + (245 * (rowNum - 1)));
+            addToCartBtn.Name = rowNum.ToString();
+            addToCartBtn.Size = new System.Drawing.Size(122, 29);
+            addToCartBtn.TabIndex = 4;
+            addToCartBtn.Text = "Add to Cart";
+            addToCartBtn.UseVisualStyleBackColor = true;
+            addToCartBtn.Click += new System.EventHandler(addToCartBtn_Click);
             // 
-            // button4
+            // cartPageBtn
             // 
-            button4.Location = new System.Drawing.Point(710, 352 + (245 * (rowNum - 1)));
-            button4.Name = "button4"+rowNum;
-            button4.Size = new System.Drawing.Size(86, 29);
-            button4.TabIndex = 8;
-            button4.Text = "Cart";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += new System.EventHandler(button4_Click);
+            cartPageBtn.Location = new System.Drawing.Point(710, 352 + (245 * (rowNum - 1)));
+            cartPageBtn.Name = "cartPageBtn"+rowNum;
+            cartPageBtn.Size = new System.Drawing.Size(86, 29);
+            cartPageBtn.TabIndex = 8;
+            cartPageBtn.Text = "Cart";
+            cartPageBtn.UseVisualStyleBackColor = true;
+            cartPageBtn.Click += new System.EventHandler(cartPageBtn_Click);
             // 
-            // pictureBox1
+            // itemPicBox
             // 
-            pictureBox1.Location = new System.Drawing.Point(52, 148 + (245 * (rowNum - 1)));
-            pictureBox1.Name = "pictureBox1"+rowNum;
-            pictureBox1.Size = new System.Drawing.Size(230, 234);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Load(image);
+            itemPicBox.Location = new System.Drawing.Point(52, 148 + (245 * (rowNum - 1)));
+            itemPicBox.Name = "itemPicBox"+rowNum;
+            itemPicBox.Size = new System.Drawing.Size(230, 234);
+            itemPicBox.TabIndex = 0;
+            itemPicBox.TabStop = false;
+            itemPicBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            itemPicBox.Load(image);
 
-            this.Controls.Add(button4);
-            this.Controls.Add(button1);
-            this.Controls.Add(label3);
-            this.Controls.Add(label2);
-            this.Controls.Add(label1);
-            this.Controls.Add(pictureBox1);
+            this.Controls.Add(cartPageBtn);
+            this.Controls.Add(addToCartBtn);
+            this.Controls.Add(descriptionLbl);
+            this.Controls.Add(priceLbl);
+            this.Controls.Add(nameLbl);
+            this.Controls.Add(itemPicBox);
 
         }
 
@@ -137,77 +137,77 @@ namespace WindowsFormsApplication1
         {
 
             // 
-            // label1
+            // nameLbl
             // 
-            Label label1 = (Label)this.Controls["label1" + rowNum];
-            label1.AutoSize = true;
+            Label nameLbl = (Label)this.Controls["nameLbl" + rowNum];
+            nameLbl.AutoSize = true;
 
-            label1.Name = "label1" + rowNum;
+            nameLbl.Name = "nameLbl" + rowNum;
 
-            label1.Size = new System.Drawing.Size(87, 20);
-            label1.TabIndex = 1;
-            label1.Text = name;
+            nameLbl.Size = new System.Drawing.Size(87, 20);
+            nameLbl.TabIndex = 1;
+            nameLbl.Text = name;
 
 
 
 
             // 
-            // label2
+            // priceLbl
             // 
-            Label label2 = (Label)this.Controls["label2" + rowNum];
-            label2.AutoSize = true;
+            Label priceLbl = (Label)this.Controls["priceLbl" + rowNum];
+            priceLbl.AutoSize = true;
             
-            label2.Name = "label2" + rowNum;
-            label2.Size = new System.Drawing.Size(80, 20);
-            label2.TabIndex = 2;
-            label2.Text = price;
+            priceLbl.Name = "priceLbl" + rowNum;
+            priceLbl.Size = new System.Drawing.Size(80, 20);
+            priceLbl.TabIndex = 2;
+            priceLbl.Text = price;
             // 
-            // label3
+            // descriptionLbl
             // 
 
-            Label label3 = (Label)this.Controls["label3" + rowNum];
-            label3.AutoSize = true;
+            Label descriptionLbl = (Label)this.Controls["descriptionLbl" + rowNum];
+            descriptionLbl.AutoSize = true;
             
-            label3.Name = "label3" + rowNum;
-            label3.Size = new System.Drawing.Size(125, 20);
-            label3.TabIndex = 3;
-            label3.Text = desc;
+            descriptionLbl.Name = "descriptionLbl" + rowNum;
+            descriptionLbl.Size = new System.Drawing.Size(125, 20);
+            descriptionLbl.TabIndex = 3;
+            descriptionLbl.Text = desc;
             // 
-            // button1
+            // addToCartBtn
             // 
             if (name != "None")
             {
-                System.Windows.Forms.Button button1 = (System.Windows.Forms.Button)this.Controls[rowNum.ToString()];
-                button1.Name = rowNum.ToString();
-                button1.Size = new System.Drawing.Size(122, 29);
-                button1.TabIndex = 4;
-                button1.Text = "Add to Cart";
-                button1.UseVisualStyleBackColor = true;
+                System.Windows.Forms.Button addToCartBtn = (System.Windows.Forms.Button)this.Controls[rowNum.ToString()];
+                addToCartBtn.Name = rowNum.ToString();
+                addToCartBtn.Size = new System.Drawing.Size(122, 29);
+                addToCartBtn.TabIndex = 4;
+                addToCartBtn.Text = "Add to Cart";
+                addToCartBtn.UseVisualStyleBackColor = true;
             }
             
             // 
-            // button4
+            // cartPageBtn
             // 
 
-            System.Windows.Forms.Button button4 = (System.Windows.Forms.Button)this.Controls["button4" + rowNum];
-            button4.Name = "button4" + rowNum;
-            button4.Size = new System.Drawing.Size(86, 29);
-            button4.TabIndex = 8;
-            button4.Text = "Cart";
-            button4.UseVisualStyleBackColor = true;
+            System.Windows.Forms.Button cartPageBtn = (System.Windows.Forms.Button)this.Controls["cartPageBtn" + rowNum];
+            cartPageBtn.Name = "cartPageBtn" + rowNum;
+            cartPageBtn.Size = new System.Drawing.Size(86, 29);
+            cartPageBtn.TabIndex = 8;
+            cartPageBtn.Text = "Cart";
+            cartPageBtn.UseVisualStyleBackColor = true;
             
             // 
-            // pictureBox1
+            // itemPicBox
             //
-            PictureBox pictureBox1 = (PictureBox)this.Controls["pictureBox1" + rowNum];
-            pictureBox1.Name = "pictureBox1" + rowNum;
-            pictureBox1.Size = new System.Drawing.Size(230, 234);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            PictureBox itemPicBox = (PictureBox)this.Controls["itemPicBox" + rowNum];
+            itemPicBox.Name = "itemPicBox" + rowNum;
+            itemPicBox.Size = new System.Drawing.Size(230, 234);
+            itemPicBox.TabIndex = 0;
+            itemPicBox.TabStop = false;
+            itemPicBox.SizeMode = PictureBoxSizeMode.StretchImage;
             try
             {
-                pictureBox1.Load(image);
+                itemPicBox.Load(image);
             }
             catch(Exception e)
             {
@@ -231,32 +231,32 @@ namespace WindowsFormsApplication1
             }
 
             // 
-            // button5
+            // prevBtn
             // 
             
-                this.button5 = new System.Windows.Forms.Button();
-                this.button5.Location = new System.Drawing.Point(332, 148 + (245 * (6 - 1)));
-                this.button5.Name = "button5";
-                this.button5.Size = new System.Drawing.Size(122, 29);
-                this.button5.TabIndex = 4;
-                this.button5.Text = "Prev";
-                this.button5.UseVisualStyleBackColor = true;
-                this.button5.Click += new System.EventHandler(this.button5_Click);
-                this.Controls.Add(this.button5);
+                this.prevBtn = new System.Windows.Forms.Button();
+                this.prevBtn.Location = new System.Drawing.Point(332, 148 + (245 * (6 - 1)));
+                this.prevBtn.Name = "prevBtn";
+                this.prevBtn.Size = new System.Drawing.Size(122, 29);
+                this.prevBtn.TabIndex = 4;
+                this.prevBtn.Text = "Prev";
+                this.prevBtn.UseVisualStyleBackColor = true;
+                this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
+                this.Controls.Add(this.prevBtn);
             
             // 
-            // button6
+            // nextBtn
             // 
             
-                this.button6 = new System.Windows.Forms.Button();
-                this.button6.Location = new System.Drawing.Point(710, 148 + (245 * (6 - 1)));
-                this.button6.Name = "button6";
-                this.button6.Size = new System.Drawing.Size(86, 29);
-                this.button6.TabIndex = 8;
-                this.button6.Text = "Next";
-                this.button6.UseVisualStyleBackColor = true;
-                this.button6.Click += new System.EventHandler(this.button6_Click);
-                this.Controls.Add(this.button6);
+                this.nextBtn = new System.Windows.Forms.Button();
+                this.nextBtn.Location = new System.Drawing.Point(710, 148 + (245 * (6 - 1)));
+                this.nextBtn.Name = "nextBtn";
+                this.nextBtn.Size = new System.Drawing.Size(86, 29);
+                this.nextBtn.TabIndex = 8;
+                this.nextBtn.Text = "Next";
+                this.nextBtn.UseVisualStyleBackColor = true;
+                this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+                this.Controls.Add(this.nextBtn);
             
         }
 
@@ -275,30 +275,30 @@ namespace WindowsFormsApplication1
             }
 
             // 
-            // button5
+            // prevBtn
             // 
             
-                this.button5 = (System.Windows.Forms.Button)this.Controls["button5"];
-                this.button5.Name = "button5";
-                this.button5.Size = new System.Drawing.Size(122, 29);
-                this.button5.TabIndex = 4;
-                this.button5.Text = "Prev";
-                this.button5.UseVisualStyleBackColor = true;
-                this.button5.Click += new System.EventHandler(this.button5_Click);
-                this.Controls.Add(this.button5);
+                this.prevBtn = (System.Windows.Forms.Button)this.Controls["prevBtn"];
+                this.prevBtn.Name = "prevBtn";
+                this.prevBtn.Size = new System.Drawing.Size(122, 29);
+                this.prevBtn.TabIndex = 4;
+                this.prevBtn.Text = "Prev";
+                this.prevBtn.UseVisualStyleBackColor = true;
+                this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
+                this.Controls.Add(this.prevBtn);
             
             // 
-            // button6
+            // nextBtn
             // 
             
-                this.button6 = (System.Windows.Forms.Button)this.Controls["button6"];
-                this.button6.Name = "button6";
-                this.button6.Size = new System.Drawing.Size(86, 29);
-                this.button6.TabIndex = 8;
-                this.button6.Text = "Next";
-                this.button6.UseVisualStyleBackColor = true;
-                this.button6.Click += new System.EventHandler(this.button6_Click);
-                this.Controls.Add(this.button6);
+                this.nextBtn = (System.Windows.Forms.Button)this.Controls["nextBtn"];
+                this.nextBtn.Name = "nextBtn";
+                this.nextBtn.Size = new System.Drawing.Size(86, 29);
+                this.nextBtn.TabIndex = 8;
+                this.nextBtn.Text = "Next";
+                this.nextBtn.UseVisualStyleBackColor = true;
+                this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+                this.Controls.Add(this.nextBtn);
             
         }
 
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication1
             
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void addToCartBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
             try
@@ -323,18 +323,18 @@ namespace WindowsFormsApplication1
             await db.addCart(Login.username, cart.returnCart());
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void cartPageBtn_Click(object sender, EventArgs e)
         {
             Cart cart = new Cart(this.cart);
             cart.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void prevBtn_Click(object sender, EventArgs e)
         {   
             if (pageNumber > 1) { pageNumber--;  populateTable2(); }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void nextBtn_Click(object sender, EventArgs e)
         {
             if (pageNumber < totalPages) { pageNumber++; populateTable2(); }         
         }
