@@ -10,7 +10,6 @@ C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\Window
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\HtmlAgilityPack.xml
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\RestSharp.xml
-C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ShoppingCartSystem.csprojAssemblyReference.cache
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cart.resources
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Search.resources
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Receipt.resources
@@ -19,7 +18,5 @@ C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\Window
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Signup.resources
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ShoppingCartSystem.csproj.GenerateResource.cache
-C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ShoppingCartSystem.csproj.CoreCompileInputs.cache
-C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ShoppingCartSystem.csproj.CopyComplete
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Jacob\Desktop\ShoppingCart\ShoppingCart\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

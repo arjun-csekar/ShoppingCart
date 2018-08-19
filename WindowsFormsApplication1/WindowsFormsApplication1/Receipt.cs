@@ -11,11 +11,18 @@ using System.Drawing.Printing;
 
 namespace WindowsFormsApplication1
 {
+    /// <summary>
+    /// Receipt Page
+    /// </summary>
     public partial class Receipt : Form
     {
         List<decimal> totals;
         private PrintDocument printDocument1 = new PrintDocument();
-
+        /// <summary>
+        /// This is the receipt constructor
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="n"></param>
         public Receipt(List<decimal> t, String n)
         {
             
@@ -36,7 +43,9 @@ namespace WindowsFormsApplication1
         }
 
         Bitmap memoryImage;
-
+        /// <summary>
+        /// Here the graphics from the screen are captured.
+        /// </summary>
         private void CaptureScreen()
         {
             Graphics myGraphics = this.CreateGraphics();
@@ -46,6 +55,11 @@ namespace WindowsFormsApplication1
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         }
 
+        /// <summary>
+        /// This is where the image will be printed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void printDocument1_PrintPage(System.Object sender,
                System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -62,7 +76,11 @@ namespace WindowsFormsApplication1
         {
 
         }
-
+        /// <summary>
+        /// When the button is clicked the screen is captured and the document is printed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             CaptureScreen();

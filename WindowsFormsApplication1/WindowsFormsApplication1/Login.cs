@@ -13,6 +13,10 @@ namespace WindowsFormsApplication1
     public partial class Login : Form
     {
         public static string username;
+
+        /// <summary>
+        /// Login Page
+        /// </summary>
         public Login()
         {
             InitializeComponent();

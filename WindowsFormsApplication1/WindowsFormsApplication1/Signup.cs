@@ -12,6 +12,9 @@ namespace WindowsFormsApplication1
 {
     public partial class Signup : Form
     {
+        /// <summary>
+        /// Signup Form
+        /// </summary>
         public Signup()
         {
             InitializeComponent();

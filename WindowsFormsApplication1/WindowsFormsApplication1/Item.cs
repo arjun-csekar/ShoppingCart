@@ -8,14 +8,21 @@ namespace WindowsFormsApplication1
 {
     public class Item
     {
-
+        /// <summary>
+        /// Item Object
+        /// </summary>
         public Item()
         {
             ItemName = "";
             ItemNum = 0;
             ItemPrice = 0.0m;
         }
-
+        /// <summary>
+        /// Item Object
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <param name="number">Number</param>
+        /// <param name="price">Price</param>
         public Item(String name, int number, decimal price)
         {
             ItemName = name;

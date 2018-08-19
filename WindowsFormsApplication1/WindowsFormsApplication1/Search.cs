@@ -29,7 +29,10 @@ namespace WindowsFormsApplication1
         private Login loginPage;
         private Boolean flag;
 
-
+        /// <summary>
+        /// Search page constructor.
+        /// </summary>
+        /// <param name="li">Login page instance</param>
         public Search(Login li)
         {
           
@@ -49,7 +52,14 @@ namespace WindowsFormsApplication1
             Database db = new Database();
             db.getCart(Login.username, cart.returnCart());
         }
-
+        /// <summary>
+        /// Populates the table.
+        /// </summary>
+        /// <param name="name">Name</param>
+        /// <param name="price">Price</param>
+        /// <param name="desc">Desc</param>
+        /// <param name="image">Image</param>
+        /// <param name="rowNum">Row Number</param>
         public void populateTableRow(String name, String price, String desc, String image, int rowNum)
         {
 
@@ -132,6 +142,15 @@ namespace WindowsFormsApplication1
             this.Controls.Add(itemPicBox);
 
         }
+
+        /// <summary>
+        /// Second pass table population.
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <param name="price">price</param>
+        /// <param name="desc">desc</param>
+        /// <param name="image">image</param>
+        /// <param name="rowNum">Row Number</param>
 
         public void populateTableRow2(String name, String price, String desc, String image, int rowNum)
         {
@@ -216,6 +235,10 @@ namespace WindowsFormsApplication1
 
         }
 
+        /// <summary>
+        /// Loops through row population.
+        /// </summary>
+
         private void populateTable()
         {
             for (int i = 0 + (5 * (pageNumber - 1)),j=1; i < 5 + (5 * (pageNumber - 1)); i++,j++)
@@ -259,6 +282,10 @@ namespace WindowsFormsApplication1
                 this.Controls.Add(this.nextBtn);
             
         }
+
+        /// <summary>
+        /// Second pass populate table
+        /// </summary>
 
         private void populateTable2()
         {
@@ -310,6 +337,7 @@ namespace WindowsFormsApplication1
 
         private async void addToCartBtn_Click(object sender, EventArgs e)
         {
+            //Gets button and adds intem to the cart
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
             try
             {
@@ -322,6 +350,7 @@ namespace WindowsFormsApplication1
             Database db = new Database();
             await db.addCart(Login.username, cart.returnCart());
         }
+
 
         private void cartPageBtn_Click(object sender, EventArgs e)
         {

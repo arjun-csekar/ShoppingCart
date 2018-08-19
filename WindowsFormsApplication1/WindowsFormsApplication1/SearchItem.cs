@@ -13,7 +13,9 @@ namespace WindowsFormsApplication1
         String itemPrice;
         String imageLocation;
 
-
+        /// <summary>
+        /// Search Item Object
+        /// </summary>
         public SearchItem()
         {
             ItemName = "";
@@ -22,6 +24,13 @@ namespace WindowsFormsApplication1
             ImageLocation = "";
         }
 
+        /// <summary>
+        /// Search Item Object
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="price"></param>
+        /// <param name="image"></param>
         public SearchItem(String name, String description, String price, String image)
         {
             ItemName = name;
